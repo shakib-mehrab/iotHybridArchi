@@ -1,0 +1,15 @@
+{
+  "device_id": "sim-device-03",
+  "gateway_url": "http://127.0.0.1:8080",
+  "fl_server_url": "http://127.0.0.1:8081",
+  "fl_receiver_port": 8084,
+  "anomaly_threshold": 0.85,
+  "tx_quota": 50,
+  "telemetry_interval_seconds": 5,
+  "fl_round_interval_seconds": 14400,
+  "model_path": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi\\models\\xgb_anomaly.json",
+  "scaler_path": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi\\models\\feature_scaler.pkl",
+  "private_key_path": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi\\keys\\sim-device-03\\device_private.pem",
+  "device_id_path": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi\\keys\\sim-device-03\\device_id.txt",
+  "log_path": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi\\logs\\sim-device-03.log"
+}

@@ -1,32 +1,41 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": null,
-  "last_completed_phase": 0,
-  "last_completed_step": "0.0",
+  "last_updated": "2026-07-16T13:15:00",
+  "last_completed_phase": 1,
+  "last_completed_step": "1.9",
 
   "user_config": {
     "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
     "wsl_username": "mehrab",
-    "wsl_project_root": "home/mehrab/projects/iotHybridArchi",
+    "wsl_project_root": "/home/mehrab/projects/iotHybridArchi",
     "dataset_path": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi\\dataset\\EdgeIIoT",
     "python_version": "Python 3.14.3",
     "go_version": "go1.26.5",
-    "cuda_available": null,
-    "docker_running": null,
-    "wsl2_confirmed": null,
+    "cuda_available": true,
+    "cuda_version": "13.1",
+    "gpu_model": "GTX 1650 4GB",
+    "docker_running": false,
+    "docker_installed": true,
+    "docker_version": "29.5.2",
+    "wsl2_confirmed": true,
+    "wsl_distro": "Ubuntu-22.04",
     "pi_ips": {},
+    "pi_mode": "simulation",
+    "package_manager": "pip",
     "anomaly_threshold": 0.85,
     "gas_limit": 50,
     "fl_round_interval": 14400,
     "channel_name": "hybridguard-channel",
     "chaincode_name": "hybridguard",
-    "org_name": "HybridGuardOrg"
+    "org_name": "HybridGuardOrg",
+    "mtd_enabled": true,
+    "mtd_mode": "guided_comments"
   },
 
   "phase_status": {
-    "phase_0_prereqs": "not_started",
-    "phase_1_environment": "not_started",
+    "phase_0_prereqs": "completed",
+    "phase_1_environment": "completed",
     "phase_2_model": "not_started",
     "phase_3_fabric": "not_started",
     "phase_4_gateway_ipfs": "not_started",
@@ -44,8 +53,8 @@
 
   "corrections_applied": {
     "gas_limit_moved_off_chain_or_invoke_fixed": false,
-    "wsl_env_inlined_into_bash_c": false,
-    "ipfshttpclient_compat_verified_or_replaced": false
+    "wsl_env_inlined_into_bash_c": true,
+    "ipfshttpclient_compat_verified_or_replaced": true
   },
 
   "deployed": {
@@ -88,8 +97,9 @@
     "b8_blacklist_sec": null
   },
 
-  "pending_actions": [
-    "Run Phase 0 questions (Q1-Q10) and fill in user_config above"
-  ],
-  "notes": []
+  "pending_actions": [],
+  "notes": [
+    "Phase 0 completed 2026-07-16. Docker daemon not running but installed — will start before Phase 3.",
+    "Using device simulation (no real Pis). MTD enabled with guided comments."
+  ]
 }
