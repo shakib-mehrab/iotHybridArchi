@@ -1,9 +1,9 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": "2026-07-16T13:15:00",
-  "last_completed_phase": 1,
-  "last_completed_step": "1.9",
+  "last_updated": "2026-07-16T15:10:00",
+  "last_completed_phase": 2,
+  "last_completed_step": "2.3",
 
   "user_config": {
     "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
@@ -36,7 +36,7 @@
   "phase_status": {
     "phase_0_prereqs": "completed",
     "phase_1_environment": "completed",
-    "phase_2_model": "not_started",
+    "phase_2_model": "completed",
     "phase_3_fabric": "not_started",
     "phase_4_gateway_ipfs": "not_started",
     "phase_5_fl_xai": "not_started",
@@ -64,8 +64,8 @@
     "chaincode_deployed": false,
     "devices_registered": [],
     "ipfs_peer_id": null,
-    "model_f1": null,
-    "model_auc": null,
+    "model_f1": 0.8636,
+    "model_auc": 0.9808,
     "fl_rounds_completed": 0,
     "last_model_cid": null
   },

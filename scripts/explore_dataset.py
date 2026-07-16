@@ -2,7 +2,7 @@ import pandas as pd, os
 from dotenv import load_dotenv
 load_dotenv()
 
-DATASET_PATH = os.path.join(os.getenv("DATASET_PATH"), "DNN-EdgeIoT-dataset.csv")
+DATASET_PATH = os.path.join(os.getenv("DATASET_PATH"), "DNN-EdgeIIoT-dataset.csv")
 print(f"Dataset: {DATASET_PATH}")
 print(f"File size: {os.path.getsize(DATASET_PATH) / (1024**2):.1f} MB")
 
