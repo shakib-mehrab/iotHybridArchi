@@ -1,0 +1,95 @@
+{
+  "project": "HybridGuard",
+  "version": "1.0",
+  "last_updated": null,
+  "last_completed_phase": 0,
+  "last_completed_step": "0.0",
+
+  "user_config": {
+    "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
+    "wsl_username": "mehrab",
+    "wsl_project_root": "home/mehrab/projects/iotHybridArchi",
+    "dataset_path": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi\\dataset\\EdgeIIoT",
+    "python_version": "Python 3.14.3",
+    "go_version": "go1.26.5",
+    "cuda_available": null,
+    "docker_running": null,
+    "wsl2_confirmed": null,
+    "pi_ips": {},
+    "anomaly_threshold": 0.85,
+    "gas_limit": 50,
+    "fl_round_interval": 14400,
+    "channel_name": "hybridguard-channel",
+    "chaincode_name": "hybridguard",
+    "org_name": "HybridGuardOrg"
+  },
+
+  "phase_status": {
+    "phase_0_prereqs": "not_started",
+    "phase_1_environment": "not_started",
+    "phase_2_model": "not_started",
+    "phase_3_fabric": "not_started",
+    "phase_4_gateway_ipfs": "not_started",
+    "phase_5_fl_xai": "not_started",
+    "phase_6_simulator": "not_started",
+    "phase_7_benchmarks": "not_started",
+    "phase_8_real_devices": "not_started"
+  },
+
+  "milestones": {
+    "phase_3_m1_channel_created": false,
+    "phase_3_m2_chaincode_deployed": false,
+    "phase_3_m3_python_query_works": false
+  },
+
+  "corrections_applied": {
+    "gas_limit_moved_off_chain_or_invoke_fixed": false,
+    "wsl_env_inlined_into_bash_c": false,
+    "ipfshttpclient_compat_verified_or_replaced": false
+  },
+
+  "deployed": {
+    "fabric_network": "hybridguard-network",
+    "chaincode_name": "hybridguard",
+    "channel_created": false,
+    "chaincode_deployed": false,
+    "devices_registered": [],
+    "ipfs_peer_id": null,
+    "model_f1": null,
+    "model_auc": null,
+    "fl_rounds_completed": 0,
+    "last_model_cid": null
+  },
+
+  "service_endpoints": {
+    "gateway": "http://127.0.0.1:8080",
+    "fl_server": "http://127.0.0.1:8081",
+    "ipfs_api": "http://127.0.0.1:5001",
+    "fabric_peer_org1": "localhost:7051",
+    "fabric_peer_org2": "localhost:9051",
+    "fl_receivers": {
+      "sim-device-01": "http://127.0.0.1:8082",
+      "sim-device-02": "http://127.0.0.1:8083",
+      "sim-device-03": "http://127.0.0.1:8084",
+      "sim-device-04": "http://127.0.0.1:8085"
+    }
+  },
+
+  "benchmark_results": {
+    "b1_f1": null,
+    "b1_auc": null,
+    "b2_latency_p95_ms": null,
+    "b3_tps": null,
+    "b4_fl_convergence_rounds": null,
+    "b5_storage_reduction_pct": null,
+    "b6_lime_mean_ms": null,
+    "b6_shap_ms": null,
+    "b7_privacy_pass": null,
+    "b8_blacklist_sec": null
+  },
+
+  "pending_actions": [
+    "Run Phase 0 questions (Q1-Q10) and fill in user_config above"
+  ],
+  "notes": []
+}
