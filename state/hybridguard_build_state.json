@@ -1,9 +1,9 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": "2026-07-16T15:10:00",
-  "last_completed_phase": 2,
-  "last_completed_step": "2.3",
+  "last_updated": "2026-07-17T23:45:00",
+  "last_completed_phase": 3,
+  "last_completed_step": "3.7",
 
   "user_config": {
     "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
@@ -15,7 +15,7 @@
     "cuda_available": true,
     "cuda_version": "13.1",
     "gpu_model": "GTX 1650 4GB",
-    "docker_running": false,
+    "docker_running": true,
     "docker_installed": true,
     "docker_version": "29.5.2",
     "wsl2_confirmed": true,
@@ -37,7 +37,7 @@
     "phase_0_prereqs": "completed",
     "phase_1_environment": "completed",
     "phase_2_model": "completed",
-    "phase_3_fabric": "not_started",
+    "phase_3_fabric": "completed",
     "phase_4_gateway_ipfs": "not_started",
     "phase_5_fl_xai": "not_started",
     "phase_6_simulator": "not_started",
@@ -46,13 +46,13 @@
   },
 
   "milestones": {
-    "phase_3_m1_channel_created": false,
-    "phase_3_m2_chaincode_deployed": false,
-    "phase_3_m3_python_query_works": false
+    "phase_3_m1_channel_created": true,
+    "phase_3_m2_chaincode_deployed": true,
+    "phase_3_m3_python_query_works": true
   },
 
   "corrections_applied": {
-    "gas_limit_moved_off_chain_or_invoke_fixed": false,
+    "gas_limit_moved_off_chain_or_invoke_fixed": true,
     "wsl_env_inlined_into_bash_c": true,
     "ipfshttpclient_compat_verified_or_replaced": true
   },
@@ -60,9 +60,9 @@
   "deployed": {
     "fabric_network": "hybridguard-network",
     "chaincode_name": "hybridguard",
-    "channel_created": false,
-    "chaincode_deployed": false,
-    "devices_registered": [],
+    "channel_created": true,
+    "chaincode_deployed": true,
+    "devices_registered": ["sim-device-01", "sim-device-02", "sim-device-03", "sim-device-04"],
     "ipfs_peer_id": null,
     "model_f1": 0.8636,
     "model_auc": 0.9808,
@@ -100,6 +100,8 @@
   "pending_actions": [],
   "notes": [
     "Phase 0 completed 2026-07-16. Docker daemon not running but installed — will start before Phase 3.",
-    "Using device simulation (no real Pis). MTD enabled with guided comments."
+    "Using device simulation (no real Pis). MTD enabled with guided comments.",
+    "Phase 3 completed 2026-07-17. Fabric 2.5.16 network running with CouchDB. Chaincode v1.0 deployed. All 4 devices registered. Python fabric_client.py verified working. CheckGasLimit uses invoke (Correction 5.1 applied). WSL login shell used for proper PATH (Correction 5.2 applied).",
+    "IMPORTANT: Docker Desktop must be running before Phase 4. Fabric containers persist across Docker restarts but channel/chaincode state may need redeployment if Docker volumes are pruned."
   ]
 }

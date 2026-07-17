@@ -59,6 +59,13 @@ class FabricClient:
             f"CORE_PEER_ADDRESS=localhost:7051"
         )
 
+    def _wsl_cmd(self, cmd_str: str) -> subprocess.CompletedProcess:
+        """Run a command in WSL via login shell to get proper PATH."""
+        return subprocess.run(
+            ["wsl", "-u", "mehrab", "--", "bash", "--login", "-c", cmd_str],
+            capture_output=True, text=True, timeout=30
+        )
+
     def _invoke(self, function: str, args: list) -> bool:
         """Execute a chaincode invoke (read-write transaction)."""
         args_json = json.dumps(args)
@@ -78,10 +85,7 @@ class FabricClient:
             f"-c '{payload}'"
         )
 
-        result = subprocess.run(
-            ["wsl", "bash", "-c", cmd_str],
-            capture_output=True, text=True
-        )
+        result = self._wsl_cmd(cmd_str)
         if result.returncode != 0:
             log.error(f"Fabric invoke failed [{function}]: {result.stderr[:200]}")
             return False
@@ -100,10 +104,7 @@ class FabricClient:
             f"-c '{payload}'"
         )
 
-        result = subprocess.run(
-            ["wsl", "bash", "-c", cmd_str],
-            capture_output=True, text=True
-        )
+        result = self._wsl_cmd(cmd_str)
         if result.returncode != 0:
             log.error(f"Fabric query failed [{function}]: {result.stderr[:200]}")
             return None
@@ -124,9 +125,32 @@ class FabricClient:
         return self._invoke("UpdateTrustScore", [device_id, str(score)])
 
     def check_gas_limit(self, device_id: str) -> str:
-        """Returns 'OK' or 'BREACH'."""
-        result = self._query("CheckGasLimit", [device_id])
-        return result if result in ("OK", "BREACH") else "OK"
+        """Returns 'OK' or 'BREACH'. Uses invoke since CheckGasLimit writes state."""
+        args_json = json.dumps([device_id])
+        payload = f'{{"function":"CheckGasLimit","Args":{args_json}}}'
+
+        cmd_str = (
+            f"{self._env_prefix} "
+            f"{self.peer_bin} chaincode invoke "
+            f"-o localhost:7050 "
+            f"--ordererTLSHostnameOverride orderer.example.com "
+            f"--tls --cafile {self.orderer_ca} "
+            f"-C {self.channel} -n {self.chaincode} "
+            f"--peerAddresses localhost:7051 "
+            f"--tlsRootCertFiles {self.org1_tls} "
+            f"--peerAddresses localhost:9051 "
+            f"--tlsRootCertFiles {self.org2_tls} "
+            f"-c '{payload}'"
+        )
+
+        result = self._wsl_cmd(cmd_str)
+        if result.returncode != 0:
+            log.error(f"CheckGasLimit failed: {result.stderr[:200]}")
+            return "OK"
+        output = result.stderr + result.stdout
+        if "BREACH" in output:
+            return "BREACH"
+        return "OK"
 
     def log_model_update(self, cid_hash: str, round_num: int) -> bool:
         return self._invoke("LogModelUpdate", [cid_hash, str(round_num)])
