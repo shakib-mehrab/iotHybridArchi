@@ -55,3 +55,27 @@
 2026-07-21 22:46:52,770 [GATEWAY] INFO IPFS upload OK: CID=QmfPAgeAgK4UptuYvinD...
 2026-07-21 22:46:52,915 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmfPAgeAgK4UptuYvinD89ZqGmtAU4KrtgmpKzkYxgkzz7'])
 2026-07-21 22:46:52,946 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 22:46:52] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 00:43:19,313 [GATEWAY] INFO Gateway starting on port 8080...
+2026-07-22 00:43:19,325 [GATEWAY] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.101.23:8080
+2026-07-22 00:43:19,325 [GATEWAY] INFO [33mPress CTRL+C to quit[0m
+2026-07-22 00:43:41,718 [GATEWAY] INFO IPFS upload OK: CID=QmbPoU1mJM1yR5h94cVu...
+2026-07-22 00:43:42,114 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmbPoU1mJM1yR5h94cVuRTzGXZoaWKZbz2gHVfht2gNNhD'])
+2026-07-22 00:43:42,144 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 00:43:42] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 00:43:47,398 [GATEWAY] INFO IPFS upload OK: CID=QmULHownZAKj8Ry43iAs...
+2026-07-22 00:43:47,583 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmULHownZAKj8Ry43iAs4WveRf5MkUQwouRz6vnpmjmvae'])
+2026-07-22 00:43:47,601 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 00:43:47] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 00:43:52,809 [GATEWAY] INFO IPFS upload OK: CID=QmSE9g4qfJ1D1Q8bUrz5...
+2026-07-22 00:43:52,973 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmSE9g4qfJ1D1Q8bUrz5Q1hKWVbSJFfwmAYPtSy9oP9srj'])
+2026-07-22 00:43:52,978 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 00:43:52] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 00:43:58,192 [GATEWAY] INFO IPFS upload OK: CID=QmWefKNXL9K1mCWChnZy...
+2026-07-22 00:43:58,369 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmWefKNXL9K1mCWChnZyg5JZk2Qsv5EK1FbRvwjSwyKEd2'])
+2026-07-22 00:43:58,375 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 00:43:58] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 00:44:03,568 [GATEWAY] INFO IPFS upload OK: CID=QmTHEpZ1CLFqHHsyNUNG...
+2026-07-22 00:44:03,741 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmTHEpZ1CLFqHHsyNUNGfrXQ4E86pQc8dSwyz4a75Gc8X8'])
+2026-07-22 00:44:03,747 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 00:44:03] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 00:44:08,956 [GATEWAY] INFO IPFS upload OK: CID=QmSHSwa476nkAfXT6n4s...
+2026-07-22 00:44:09,130 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmSHSwa476nkAfXT6n4sPbPt4Vs1XHiuXTE9WkGxCHBV8e'])
+2026-07-22 00:44:09,138 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 00:44:09] "POST /ingest HTTP/1.1" 200 -

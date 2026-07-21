@@ -77,17 +77,11 @@ class FabricClient:
         "PHANTOM_READ_CONFLICT",
     )
 
-    def _invoke(self, function: str, args: list, retries: int = 3,
-                backoff: float = 1.5) -> bool:
-        """Execute a chaincode invoke (read-write transaction).
-
-        Retries transient endorsement/commit conflicts (see _TRANSIENT_ERRORS)
-        with a fixed backoff. Deterministic failures return immediately.
-        """
+    def _build_invoke_cmd(self, function: str, args: list) -> str:
+        """Build the WSL peer 'chaincode invoke' command string for a function."""
         args_json = json.dumps(args)
         payload = f'{{"function":"{function}","Args":{args_json}}}'
-
-        cmd_str = (
+        return (
             f"{self._env_prefix} "
             f"{self.peer_bin} chaincode invoke "
             f"-o localhost:7050 "
@@ -101,6 +95,14 @@ class FabricClient:
             f"-c '{payload}'"
         )
 
+    def _run_invoke(self, function: str, args: list, retries: int = 3,
+                    backoff: float = 1.5) -> subprocess.CompletedProcess:
+        """Execute a chaincode invoke, retrying transient endorsement/commit
+        conflicts (see _TRANSIENT_ERRORS) with a fixed backoff. Deterministic
+        failures return immediately. Returns the CompletedProcess of the final
+        attempt so callers can inspect stdout/stderr (e.g. CheckGasLimit)."""
+        cmd_str = self._build_invoke_cmd(function, args)
+        result = None
         for attempt in range(1, retries + 1):
             result = self._wsl_cmd(cmd_str)
             if result.returncode == 0:
@@ -109,7 +111,7 @@ class FabricClient:
                              f"[succeeded on attempt {attempt}]")
                 else:
                     log.info(f"Fabric invoke OK: {function}({args[:2]})")
-                return True
+                return result
 
             stderr = result.stderr or ""
             transient = any(e in stderr for e in self._TRANSIENT_ERRORS)
@@ -121,9 +123,16 @@ class FabricClient:
                 continue
 
             log.error(f"Fabric invoke failed [{function}]: {stderr[:200]}")
-            return False
+            return result
 
-        return False
+        return result
+
+    def _invoke(self, function: str, args: list, retries: int = 3,
+                backoff: float = 1.5) -> bool:
+        """Execute a chaincode invoke (read-write transaction) with retry.
+        Returns True on commit, False otherwise."""
+        result = self._run_invoke(function, args, retries, backoff)
+        return result is not None and result.returncode == 0
 
     def _query(self, function: str, args: list) -> Optional[str]:
         """Execute a chaincode query (read-only, no ordering)."""
@@ -158,29 +167,16 @@ class FabricClient:
         return self._invoke("UpdateTrustScore", [device_id, str(score)])
 
     def check_gas_limit(self, device_id: str) -> str:
-        """Returns 'OK' or 'BREACH'. Uses invoke since CheckGasLimit writes state."""
-        args_json = json.dumps([device_id])
-        payload = f'{{"function":"CheckGasLimit","Args":{args_json}}}'
-
-        cmd_str = (
-            f"{self._env_prefix} "
-            f"{self.peer_bin} chaincode invoke "
-            f"-o localhost:7050 "
-            f"--ordererTLSHostnameOverride orderer.example.com "
-            f"--tls --cafile {self.orderer_ca} "
-            f"-C {self.channel} -n {self.chaincode} "
-            f"--peerAddresses localhost:7051 "
-            f"--tlsRootCertFiles {self.org1_tls} "
-            f"--peerAddresses localhost:9051 "
-            f"--tlsRootCertFiles {self.org2_tls} "
-            f"-c '{payload}'"
-        )
-
-        result = self._wsl_cmd(cmd_str)
-        if result.returncode != 0:
-            log.error(f"CheckGasLimit failed: {result.stderr[:200]}")
+        """Returns 'OK' or 'BREACH'. CheckGasLimit is an invoke (it writes
+        state), so this routes through _run_invoke and gets the same transient-
+        conflict retry as every other write. Fails open ('OK') on error so a
+        Fabric hiccup never wrongly reports a gas breach. The peer prints the
+        chaincode return value into the invoke result payload/stderr, so we
+        scan the combined output for 'BREACH'."""
+        result = self._run_invoke("CheckGasLimit", [device_id])
+        if result is None or result.returncode != 0:
             return "OK"
-        output = result.stderr + result.stdout
+        output = (result.stderr or "") + (result.stdout or "")
         if "BREACH" in output:
             return "BREACH"
         return "OK"
@@ -202,6 +198,20 @@ class FabricClient:
         if device:
             return device.get("status", "unknown")
         return "unknown"
+
+    def get_cid_history(self, device_id: str) -> list:
+        """Return the append-only CID history for a device as a list of dicts
+        (each: device_id, cid_hash, timestamp), ascending by timestamp.
+        Read-only query against the GetCIDHistory chaincode function. Returns
+        an empty list if the device has no CIDs or the query fails."""
+        result = self._query("GetCIDHistory", [device_id])
+        if not result:
+            return []
+        try:
+            records = json.loads(result)
+        except json.JSONDecodeError:
+            return []
+        return records if isinstance(records, list) else []
 
     def subscribe_events(self, callback: Callable[[str, bytes], None]):
         """
