@@ -1,9 +1,9 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": "2026-07-21T20:05:00",
-  "last_completed_phase": 4,
-  "last_completed_step": "4.2",
+  "last_updated": "2026-07-21T20:50:00",
+  "last_completed_phase": 5,
+  "last_completed_step": "5.3",
 
   "user_config": {
     "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
@@ -39,7 +39,7 @@
     "phase_2_model": "completed",
     "phase_3_fabric": "completed",
     "phase_4_gateway_ipfs": "completed",
-    "phase_5_fl_xai": "not_started",
+    "phase_5_fl_xai": "in_progress",
     "phase_6_simulator": "not_started",
     "phase_7_benchmarks": "not_started",
     "phase_8_real_devices": "not_started"
@@ -105,6 +105,7 @@
     "IMPORTANT: Docker Desktop must be running before Phase 4. Fabric containers persist across Docker restarts but channel/chaincode state may need redeployment if Docker volumes are pruned.",
     "Phase 4 started 2026-07-21. Kubo is v0.42.0 (newer than the v0.28 Correction 5.3 anticipated). ipfshttpclient NOT installed and NOT needed — ipfs_client.py already reimplemented with plain requests against Kubo HTTP RPC (Correction 5.3 confirmed applied in code). All 4 IPFS methods verified working against Kubo 0.42. IPFS peer ID recorded.",
     "Phase 4 Step 4.1: Found and fixed a latent bug in ipfs_client.get() — it used resp.text, which requests decodes as ISO-8859-1 (Kubo /cat sends no charset), corrupting multibyte content while upload() encodes UTF-8. Changed to resp.content.decode('utf-8'). ASCII json.dumps payloads (the real gateway path) were unaffected; unicode roundtrip now verified. This is a NEW bug found during verification, not one of the three CLAUDE.md section 5 corrections.",
-    "Phase 4 completed 2026-07-21. PORT CONFLICT resolved: Kubo's read-only gateway defaults to 127.0.0.1:8080, colliding with HybridGuard gateway_server (8080). Moved IPFS gateway to 127.0.0.1:8088 via 'ipfs config Addresses.Gateway' + daemon restart. HybridGuard uses only the IPFS API (:5001), so the gateway move is transparent. gateway_server.py written and verified: /health returns status ok, ipfs_available true. If IPFS is ever reinitialized (ipfs init), the Gateway port reverts to 8080 and must be re-set to 8088."
+    "Phase 4 completed 2026-07-21. PORT CONFLICT resolved: Kubo's read-only gateway defaults to 127.0.0.1:8080, colliding with HybridGuard gateway_server (8080). Moved IPFS gateway to 127.0.0.1:8088 via 'ipfs config Addresses.Gateway' + daemon restart. HybridGuard uses only the IPFS API (:5001), so the gateway move is transparent. gateway_server.py written and verified: /health returns status ok, ipfs_available true. If IPFS is ever reinitialized (ipfs init), the Gateway port reverts to 8080 and must be re-set to 8088.",
+    "Phase 5 IN PROGRESS 2026-07-21. All three files WRITTEN but NOT YET VERIFIED (Bash command classifier was down, blocking the RAM check + server start + curl tests): fl/xai.py, fl/trust_manager.py, fl/fl_server.py. RESUME HERE: (1) check RAM headroom before starting fl_server (SHAP TreeExplainer adds ~300MB on first call, 8GB box); (2) start 'python fl/fl_server.py' on port 8081; (3) verify 'curl /status' returns round=0 and 'curl /explain' returns lime/shap/alert fields. Minor divergence: fl/xai.py format_alert uses ASCII '^ HIGH'/'v LOW' instead of unicode arrows to avoid Windows cp1252 console mojibake (same class of issue as the earlier IPFS UTF-8 bug)."
   ]
 }
