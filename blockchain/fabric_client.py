@@ -10,7 +10,7 @@ string rather than passed via subprocess env=, because Windows env= does not
 propagate into the WSL instance spawned by the wsl launcher.
 """
 
-import subprocess, json, os, logging
+import subprocess, json, os, logging, time
 from typing import Optional, Callable
 from dotenv import load_dotenv
 
@@ -66,8 +66,24 @@ class FabricClient:
             capture_output=True, text=True, timeout=30
         )
 
-    def _invoke(self, function: str, args: list) -> bool:
-        """Execute a chaincode invoke (read-write transaction)."""
+    # Endorsement/commit errors that stem from transient cross-peer state
+    # skew on a hot key, not from a logic fault. Re-proposing after a short
+    # pause lets both endorsing peers catch up to the same read-set version.
+    # This mirrors what the Fabric Gateway SDK retries automatically; the raw
+    # peer CLI path does not, so we do it here.
+    _TRANSIENT_ERRORS = (
+        "ProposalResponsePayloads do not match",
+        "MVCC_READ_CONFLICT",
+        "PHANTOM_READ_CONFLICT",
+    )
+
+    def _invoke(self, function: str, args: list, retries: int = 3,
+                backoff: float = 1.5) -> bool:
+        """Execute a chaincode invoke (read-write transaction).
+
+        Retries transient endorsement/commit conflicts (see _TRANSIENT_ERRORS)
+        with a fixed backoff. Deterministic failures return immediately.
+        """
         args_json = json.dumps(args)
         payload = f'{{"function":"{function}","Args":{args_json}}}'
 
@@ -85,12 +101,29 @@ class FabricClient:
             f"-c '{payload}'"
         )
 
-        result = self._wsl_cmd(cmd_str)
-        if result.returncode != 0:
-            log.error(f"Fabric invoke failed [{function}]: {result.stderr[:200]}")
+        for attempt in range(1, retries + 1):
+            result = self._wsl_cmd(cmd_str)
+            if result.returncode == 0:
+                if attempt > 1:
+                    log.info(f"Fabric invoke OK: {function}({args[:2]}) "
+                             f"[succeeded on attempt {attempt}]")
+                else:
+                    log.info(f"Fabric invoke OK: {function}({args[:2]})")
+                return True
+
+            stderr = result.stderr or ""
+            transient = any(e in stderr for e in self._TRANSIENT_ERRORS)
+            if transient and attempt < retries:
+                log.warning(f"Fabric invoke [{function}] transient conflict, "
+                            f"retry {attempt}/{retries - 1} after {backoff}s: "
+                            f"{stderr[:120]}")
+                time.sleep(backoff)
+                continue
+
+            log.error(f"Fabric invoke failed [{function}]: {stderr[:200]}")
             return False
-        log.info(f"Fabric invoke OK: {function}({args[:2]})")
-        return True
+
+        return False
 
     def _query(self, function: str, args: list) -> Optional[str]:
         """Execute a chaincode query (read-only, no ordering)."""

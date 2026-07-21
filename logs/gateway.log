@@ -12,3 +12,46 @@
 2026-07-21 20:09:01,208 [GATEWAY] INFO [33mPress CTRL+C to quit[0m
 2026-07-21 20:09:01,588 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 20:09:01] "GET /health HTTP/1.1" 200 -
 2026-07-21 20:09:01,862 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 20:09:01] "GET /health HTTP/1.1" 200 -
+2026-07-21 21:51:51,347 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 21:51:51] "GET /health HTTP/1.1" 200 -
+2026-07-21 21:54:33,989 [GATEWAY] INFO IPFS upload OK: CID=QmeWvoUfwufoJNhV4mtv...
+2026-07-21 21:54:34,909 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmeWvoUfwufoJNhV4mtvuzdTFNkv3b2NEmxzu3kA9cW8DX'])
+2026-07-21 21:54:35,025 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 21:54:35] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 21:54:40,255 [GATEWAY] INFO IPFS upload OK: CID=QmUzmARRLfATPZ6dwF6z...
+2026-07-21 21:54:40,439 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: could not assemble transaction: ProposalResponsePayloads do not match (base64): 'CiDrSXR4tmxfyE/ywB7e3LeqFBRqRxEmrRGS4E+G7jio6BK4BQrkAxI8CgpfbGlmZWN5Y2xlEi4KLAombmFtZXNwYWNlcy9maWVsZHMvaHlicmlk
+2026-07-21 21:54:40,449 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 21:54:40] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 21:54:45,642 [GATEWAY] INFO IPFS upload OK: CID=QmTi9HoaxyiWupE3HBXg...
+2026-07-21 21:54:45,794 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: could not assemble transaction: ProposalResponsePayloads do not match (base64): 'CiCCs7JF4sFmmg0cgh0mLIVWcuacVbrE1450GOu76cwrXRK4BQrkAxI8CgpfbGlmZWN5Y2xlEi4KLAombmFtZXNwYWNlcy9maWVsZHMvaHlicmlk
+2026-07-21 21:54:45,802 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 21:54:45] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 21:54:51,021 [GATEWAY] INFO IPFS upload OK: CID=QmPzeYnTtEQ39yt9jatb...
+2026-07-21 21:54:51,204 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: could not assemble transaction: ProposalResponsePayloads do not match (base64): 'CiBngEDn8hKIM6ud6f1aMWdnOY4y9kOfnrovLL0F2mCjWxK4BQrkAxI8CgpfbGlmZWN5Y2xlEi4KLAombmFtZXNwYWNlcy9maWVsZHMvaHlicmlk
+2026-07-21 21:54:51,220 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 21:54:51] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 21:54:56,419 [GATEWAY] INFO IPFS upload OK: CID=QmZr6NvhP9amYGS6LYCS...
+2026-07-21 21:54:56,571 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: could not assemble transaction: ProposalResponsePayloads do not match (base64): 'CiCXzF+wyIAh0WVo37Atym21wsJOdltgTcJeRPfLCi76cBK4BQrkAxI8CgpfbGlmZWN5Y2xlEi4KLAombmFtZXNwYWNlcy9maWVsZHMvaHlicmlk
+2026-07-21 21:54:56,577 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 21:54:56] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 21:55:01,771 [GATEWAY] INFO IPFS upload OK: CID=QmcB6eGtV7VAXHondvsK...
+2026-07-21 21:55:01,907 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmcB6eGtV7VAXHondvsKy1siNkP7KBsZ3WLcTTiv4oqCns'])
+2026-07-21 21:55:01,915 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 21:55:01] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 22:45:24,341 [GATEWAY] INFO Gateway starting on port 8080...
+2026-07-21 22:45:24,355 [GATEWAY] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.101.23:8080
+2026-07-21 22:45:24,355 [GATEWAY] INFO [33mPress CTRL+C to quit[0m
+2026-07-21 22:46:24,944 [GATEWAY] INFO IPFS upload OK: CID=QmcbLFjSsdjRL6EnqnWR...
+2026-07-21 22:46:25,934 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmcbLFjSsdjRL6EnqnWR66wR6pmsNjaAAttqk4wpErsxHc'])
+2026-07-21 22:46:26,091 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 22:46:26] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 22:46:31,326 [GATEWAY] INFO IPFS upload OK: CID=QmSmZN8L4UqeaSLRsPkS...
+2026-07-21 22:46:31,495 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmSmZN8L4UqeaSLRsPkSTrZRJYwbjtzEDUSt7ouC6tcEJf'])
+2026-07-21 22:46:31,501 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 22:46:31] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 22:46:36,703 [GATEWAY] INFO IPFS upload OK: CID=QmRwyeHzaqhsVvvxgDDK...
+2026-07-21 22:46:36,861 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmRwyeHzaqhsVvvxgDDKk8Gbszey7gVGF4yipnTwJu41JJ'])
+2026-07-21 22:46:36,867 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 22:46:36] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 22:46:42,065 [GATEWAY] INFO IPFS upload OK: CID=QmTNMtnrEwTkzMQqPwkR...
+2026-07-21 22:46:42,216 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmTNMtnrEwTkzMQqPwkRdxAMXs7Mga4e4HpjRpVxqAx5jd'])
+2026-07-21 22:46:42,236 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 22:46:42] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 22:46:47,421 [GATEWAY] INFO IPFS upload OK: CID=QmeqHQLyJ5K4fVhzRuLZ...
+2026-07-21 22:46:47,577 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmeqHQLyJ5K4fVhzRuLZ3PQTUZsRyPEC7VJieYWwaQqpdT'])
+2026-07-21 22:46:47,582 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 22:46:47] "POST /ingest HTTP/1.1" 200 -
+2026-07-21 22:46:52,770 [GATEWAY] INFO IPFS upload OK: CID=QmfPAgeAgK4UptuYvinD...
+2026-07-21 22:46:52,915 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmfPAgeAgK4UptuYvinD89ZqGmtAU4KrtgmpKzkYxgkzz7'])
+2026-07-21 22:46:52,946 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 22:46:52] "POST /ingest HTTP/1.1" 200 -

@@ -1,9 +1,9 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": "2026-07-21T20:50:00",
-  "last_completed_phase": 5,
-  "last_completed_step": "5.3",
+  "last_updated": "2026-07-21T22:30:00",
+  "last_completed_phase": 6,
+  "last_completed_step": "6.4",
 
   "user_config": {
     "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
@@ -39,8 +39,8 @@
     "phase_2_model": "completed",
     "phase_3_fabric": "completed",
     "phase_4_gateway_ipfs": "completed",
-    "phase_5_fl_xai": "in_progress",
-    "phase_6_simulator": "not_started",
+    "phase_5_fl_xai": "completed",
+    "phase_6_simulator": "completed",
     "phase_7_benchmarks": "not_started",
     "phase_8_real_devices": "not_started"
   },
@@ -106,6 +106,10 @@
     "Phase 4 started 2026-07-21. Kubo is v0.42.0 (newer than the v0.28 Correction 5.3 anticipated). ipfshttpclient NOT installed and NOT needed — ipfs_client.py already reimplemented with plain requests against Kubo HTTP RPC (Correction 5.3 confirmed applied in code). All 4 IPFS methods verified working against Kubo 0.42. IPFS peer ID recorded.",
     "Phase 4 Step 4.1: Found and fixed a latent bug in ipfs_client.get() — it used resp.text, which requests decodes as ISO-8859-1 (Kubo /cat sends no charset), corrupting multibyte content while upload() encodes UTF-8. Changed to resp.content.decode('utf-8'). ASCII json.dumps payloads (the real gateway path) were unaffected; unicode roundtrip now verified. This is a NEW bug found during verification, not one of the three CLAUDE.md section 5 corrections.",
     "Phase 4 completed 2026-07-21. PORT CONFLICT resolved: Kubo's read-only gateway defaults to 127.0.0.1:8080, colliding with HybridGuard gateway_server (8080). Moved IPFS gateway to 127.0.0.1:8088 via 'ipfs config Addresses.Gateway' + daemon restart. HybridGuard uses only the IPFS API (:5001), so the gateway move is transparent. gateway_server.py written and verified: /health returns status ok, ipfs_available true. If IPFS is ever reinitialized (ipfs init), the Gateway port reverts to 8080 and must be re-set to 8088.",
-    "Phase 5 IN PROGRESS 2026-07-21. All three files WRITTEN but NOT YET VERIFIED (Bash command classifier was down, blocking the RAM check + server start + curl tests): fl/xai.py, fl/trust_manager.py, fl/fl_server.py. RESUME HERE: (1) check RAM headroom before starting fl_server (SHAP TreeExplainer adds ~300MB on first call, 8GB box); (2) start 'python fl/fl_server.py' on port 8081; (3) verify 'curl /status' returns round=0 and 'curl /explain' returns lime/shap/alert fields. Minor divergence: fl/xai.py format_alert uses ASCII '^ HIGH'/'v LOW' instead of unicode arrows to avoid Windows cp1252 console mojibake (same class of issue as the earlier IPFS UTF-8 bug)."
+    "Phase 5 IN PROGRESS 2026-07-21. All three files WRITTEN but NOT YET VERIFIED (Bash command classifier was down, blocking the RAM check + server start + curl tests): fl/xai.py, fl/trust_manager.py, fl/fl_server.py. RESUME HERE: (1) check RAM headroom before starting fl_server (SHAP TreeExplainer adds ~300MB on first call, 8GB box); (2) start 'python fl/fl_server.py' on port 8081; (3) verify 'curl /status' returns round=0 and 'curl /explain' returns lime/shap/alert fields. Minor divergence: fl/xai.py format_alert uses ASCII '^ HIGH'/'v LOW' instead of unicode arrows to avoid Windows cp1252 console mojibake (same class of issue as the earlier IPFS UTF-8 bug).",
+    "Phase 5 COMPLETED 2026-07-21. fl_server started clean on 8081 (XAIEngine built SHAP TreeExplainer + LIME explainer without error). /status returned round=0 with empty device lists. /explain (POST) returned a valid parsed JSON object with lime/shap/alert. NOTE: PowerShell 'curl' is aliased to Invoke-WebRequest and defaults to GET, so 'curl /explain' gave a 405 (POST-only) — used Invoke-RestMethod -Method Post instead. Bug fix applied by user: master prompt's xai.py imports 'lime.tabular' but the correct module path is 'lime.lime_tabular' — corrected in the written file. Verification done via user-run PowerShell (agent Bash classifier was intermittently unavailable this session).",
+    "Phase 6 COMPLETED 2026-07-21. Four files written (edge/fl_receiver.py, edge/edge_agent.py, edge/simulator.py, scripts/run_simulation.py). Verified end-to-end via user-run PowerShell: 30s NORMAL_OPERATION sim on sim-device-01 -> every tick IPFS upload OK + StoreCID OK + HTTP 200; fl_server /status shows trust_scores populated (decaying from fresh 1.0). Full Layer-1 pipeline (sign -> gateway verify -> IPFS -> Fabric -> FL trust) works.",
+    "Phase 6 StoreCID transient-failure investigation: first run showed intermittent 'ProposalResponsePayloads do not match' on 4/6 ticks. Root cause CONFIRMED via reading deployed hybridguard.go: StoreCID is fully deterministic (no time.Now/rand/unsorted-map; struct + sorted-map JSON). Error is client-side endorsement-assembly mismatch from TRANSIENT cross-peer read-set VERSION skew on the hot key (same key written every tick; org1/org2 peers momentarily one block apart during a burst). User confirmed both peers healthy at identical height 12 / same block hashes AFTER the run — consistent with transient (not permanent) skew. FIXES APPLIED (Option 3): (a) fabric_client._invoke() now retries transient errors (ProposalResponsePayloads/MVCC_READ_CONFLICT/PHANTOM_READ_CONFLICT), 3 attempts, 1.5s backoff, mirroring Fabric Gateway SDK; (b) gateway_server /ingest captures store_cid() return in 'success' var and logs WARNING if not committed (no double-invoke). IMPORTANT HONEST CAVEAT: the clean re-run succeeded on FIRST attempt every tick (zero transient-conflict WARNINGs, no '[succeeded on attempt N]' lines) — so the retry path was NEVER exercised and remains sound-but-unproven. Run-2 success is most likely due to reduced machine contention (VS Code terminals + stray gateway procs closed), NOT the retry code and NOT merely loading new code (old/new send identical proposals; the skew is a Fabric-level timing race independent of Python). To truly validate retry: force contention (MIRAI_FLOOD burst / tight same-key loop) and look for the retry WARNING + attempt-2 success.",
+    "OPEN ITEMS for Phase 7: (1) Append-only CID redesign — store each CID under a unique composite key (e.g. cid~device~ts), append-only, never read-modify-write the device record; eliminates hot-key contention entirely AND creates a true immutable CID audit trail. Requires chaincode redeploy (seq 2) + decision on whether GetDevice.LatestCIDHash is still maintained. Deferred to Phase 7 as an enhancement, NOT a blocker. (2) check_gas_limit() builds its own inline invoke and does NOT route through _invoke(), so it does not get the new retry logic — address in the same redesign pass."
   ]
 }

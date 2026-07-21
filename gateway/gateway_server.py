@@ -99,7 +99,10 @@ def ingest():
 
     # 5. Store CID on blockchain via fabric_client wrapper
     timestamp = str(int(time.time()))
-    fabric.store_cid(device_id, cid, timestamp)
+    success = fabric.store_cid(device_id, cid, timestamp)
+    if not success:
+        log.warning(f"store_cid did NOT commit for {device_id}: "
+                    f"CID {cid} uploaded to IPFS but NOT written to ledger")
 
     # 6. Handle anomaly
     if anomaly:

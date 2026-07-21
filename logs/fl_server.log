@@ -17,3 +17,35 @@
   cpu_pct > 7.17: v LOW (-0.0850)
   mem_pct > 9.49: ^ HIGH (+0.0248)
 2026-07-21 21:00:08,946 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 21:00:08] "POST /explain HTTP/1.1" 200 -
+2026-07-21 21:54:34,989 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.999
+2026-07-21 21:54:35,009 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 21:54:35] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 21:54:40,447 [FL-SERVER] INFO Trust updated: sim-device-01 -> 1.000
+2026-07-21 21:54:40,447 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 21:54:40] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 21:54:45,799 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.997
+2026-07-21 21:54:45,800 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 21:54:45] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 21:54:51,218 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.987
+2026-07-21 21:54:51,218 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 21:54:51] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 21:54:56,575 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.984
+2026-07-21 21:54:56,576 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 21:54:56] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 21:55:01,912 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.969
+2026-07-21 21:55:01,913 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 21:55:01] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 22:00:23,729 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:00:23] "GET /status HTTP/1.1" 200 -
+2026-07-21 22:44:59,045 [FL-SERVER] INFO FL Server starting on port 8081...
+2026-07-21 22:44:59,072 [FL-SERVER] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8081
+ * Running on http://192.168.101.23:8081
+2026-07-21 22:44:59,073 [FL-SERVER] INFO [33mPress CTRL+C to quit[0m
+2026-07-21 22:46:26,036 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.965
+2026-07-21 22:46:26,074 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:46:26] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 22:46:31,500 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.953
+2026-07-21 22:46:31,500 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:46:31] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 22:46:36,865 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.944
+2026-07-21 22:46:36,866 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:46:36] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 22:46:42,234 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.937
+2026-07-21 22:46:42,235 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:46:42] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 22:46:47,580 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.923
+2026-07-21 22:46:47,581 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:46:47] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 22:46:52,943 [FL-SERVER] INFO Trust updated: sim-device-01 -> 0.909
+2026-07-21 22:46:52,944 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:46:52] "POST /contribution_ready HTTP/1.1" 200 -
+2026-07-21 22:47:35,627 [FL-SERVER] INFO 127.0.0.1 - - [21/Jul/2026 22:47:35] "GET /status HTTP/1.1" 200 -

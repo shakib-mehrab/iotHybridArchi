@@ -43,3 +43,4 @@ class XAIEngine:
         for feat, val in top[:3]:
             lines.append(f"  {feat}: {'^ HIGH' if val > 0 else 'v LOW'} ({val:+.4f})")
         return "\n".join(lines)
+    
