@@ -1,0 +1,10 @@
+2026-07-21 20:09:01,189 [GATEWAY] INFO Gateway starting on port 8080...
+ * Serving Flask app 'gateway_server'
+ * Debug mode: off
+2026-07-21 20:09:01,207 [GATEWAY] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.101.23:8080
+2026-07-21 20:09:01,208 [GATEWAY] INFO [33mPress CTRL+C to quit[0m
+2026-07-21 20:09:01,588 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 20:09:01] "GET /health HTTP/1.1" 200 -
+2026-07-21 20:09:01,862 [GATEWAY] INFO 127.0.0.1 - - [21/Jul/2026 20:09:01] "GET /health HTTP/1.1" 200 -

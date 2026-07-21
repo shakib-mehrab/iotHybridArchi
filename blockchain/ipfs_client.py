@@ -44,7 +44,10 @@ class IPFSClient:
         url = f"{self.api_url}/api/v0/cat"
         resp = requests.post(url, params={"arg": cid})
         resp.raise_for_status()
-        return resp.text
+        # Kubo /cat sends no charset, so requests' resp.text falls back to
+        # ISO-8859-1 and corrupts multibyte content. upload() encodes UTF-8,
+        # so decode UTF-8 here to keep the roundtrip symmetric.
+        return resp.content.decode("utf-8")
 
     def is_available(self) -> bool:
         """Check if IPFS daemon is reachable."""

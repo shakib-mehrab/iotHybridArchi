@@ -1,9 +1,9 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": "2026-07-17T23:45:00",
-  "last_completed_phase": 3,
-  "last_completed_step": "3.7",
+  "last_updated": "2026-07-21T20:05:00",
+  "last_completed_phase": 4,
+  "last_completed_step": "4.2",
 
   "user_config": {
     "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
@@ -38,7 +38,7 @@
     "phase_1_environment": "completed",
     "phase_2_model": "completed",
     "phase_3_fabric": "completed",
-    "phase_4_gateway_ipfs": "not_started",
+    "phase_4_gateway_ipfs": "completed",
     "phase_5_fl_xai": "not_started",
     "phase_6_simulator": "not_started",
     "phase_7_benchmarks": "not_started",
@@ -63,7 +63,7 @@
     "channel_created": true,
     "chaincode_deployed": true,
     "devices_registered": ["sim-device-01", "sim-device-02", "sim-device-03", "sim-device-04"],
-    "ipfs_peer_id": null,
+    "ipfs_peer_id": "12D3KooWFyDFSFyT1VT56MjYzq2wP6Z2KnU4ynYVuVXtz6qdybyX",
     "model_f1": 0.8636,
     "model_auc": 0.9808,
     "fl_rounds_completed": 0,
@@ -102,6 +102,9 @@
     "Phase 0 completed 2026-07-16. Docker daemon not running but installed — will start before Phase 3.",
     "Using device simulation (no real Pis). MTD enabled with guided comments.",
     "Phase 3 completed 2026-07-17. Fabric 2.5.16 network running with CouchDB. Chaincode v1.0 deployed. All 4 devices registered. Python fabric_client.py verified working. CheckGasLimit uses invoke (Correction 5.1 applied). WSL login shell used for proper PATH (Correction 5.2 applied).",
-    "IMPORTANT: Docker Desktop must be running before Phase 4. Fabric containers persist across Docker restarts but channel/chaincode state may need redeployment if Docker volumes are pruned."
+    "IMPORTANT: Docker Desktop must be running before Phase 4. Fabric containers persist across Docker restarts but channel/chaincode state may need redeployment if Docker volumes are pruned.",
+    "Phase 4 started 2026-07-21. Kubo is v0.42.0 (newer than the v0.28 Correction 5.3 anticipated). ipfshttpclient NOT installed and NOT needed — ipfs_client.py already reimplemented with plain requests against Kubo HTTP RPC (Correction 5.3 confirmed applied in code). All 4 IPFS methods verified working against Kubo 0.42. IPFS peer ID recorded.",
+    "Phase 4 Step 4.1: Found and fixed a latent bug in ipfs_client.get() — it used resp.text, which requests decodes as ISO-8859-1 (Kubo /cat sends no charset), corrupting multibyte content while upload() encodes UTF-8. Changed to resp.content.decode('utf-8'). ASCII json.dumps payloads (the real gateway path) were unaffected; unicode roundtrip now verified. This is a NEW bug found during verification, not one of the three CLAUDE.md section 5 corrections.",
+    "Phase 4 completed 2026-07-21. PORT CONFLICT resolved: Kubo's read-only gateway defaults to 127.0.0.1:8080, colliding with HybridGuard gateway_server (8080). Moved IPFS gateway to 127.0.0.1:8088 via 'ipfs config Addresses.Gateway' + daemon restart. HybridGuard uses only the IPFS API (:5001), so the gateway move is transparent. gateway_server.py written and verified: /health returns status ok, ipfs_available true. If IPFS is ever reinitialized (ipfs init), the Gateway port reverts to 8080 and must be re-set to 8088."
   ]
 }
