@@ -4,5 +4,8 @@ hybridguard_architecture_context.md
 hybridguard_build_prompt.md
 dataset
 docs
-
+scripts/__pycache__
+edge/__pycache__ 
+dashboard/__pycache__
+config/__pycache__
 prompt.txt

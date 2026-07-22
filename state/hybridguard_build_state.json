@@ -1,7 +1,7 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": "2026-07-22T00:00:00",
+  "last_updated": "2026-07-22T12:00:00",
   "last_completed_phase": 6,
   "last_completed_step": "7.0-redesign-deployed-benchmarks-pending",
 
@@ -42,6 +42,7 @@
     "phase_5_fl_xai": "completed",
     "phase_6_simulator": "completed",
     "phase_7_benchmarks": "in_progress",
+    "phase_7_2_dashboard": "code_complete_agent_verified_pending_manual",
     "phase_8_real_devices": "not_started"
   },
 
@@ -62,9 +63,9 @@
     "chaincode_name": "hybridguard",
     "channel_created": true,
     "chaincode_deployed": true,
-    "chaincode_version": "2.1",
-    "chaincode_sequence": 3,
-    "chaincode_package_id": "hybridguard_2.1:2817ea861613554d5a9ab9fea88ddb5d3d234c2e017c9fb1873f18dc7d6326ab",
+    "chaincode_version": "1.0",
+    "chaincode_sequence": 1,
+    "chaincode_package_id": "hybridguard_1.0:a0f67b9c8692eea911894587131a7dc723f3ed28d1e32b31933e682b247668b4",
     "devices_registered": ["sim-device-01", "sim-device-02", "sim-device-03", "sim-device-04"],
     "ipfs_peer_id": "12D3KooWFyDFSFyT1VT56MjYzq2wP6Z2KnU4ynYVuVXtz6qdybyX",
     "model_f1": 0.8636,
@@ -100,7 +101,11 @@
     "b8_blacklist_sec": null
   },
 
-  "pending_actions": [],
+  "pending_actions": [
+    "Phase 7 benchmarks: run b1-b8 and record results in benchmark_results.",
+    "Phase 7.2 dashboard: complete code, verify agent integration, and run manual tests.",
+    "Phase 8 real devices: set up real Raspberry Pis, register them, and verify end-to-end operation."
+  ],
   "notes": [
     "Phase 0 completed 2026-07-16. Docker daemon not running but installed — will start before Phase 3.",
     "Using device simulation (no real Pis). MTD enabled with guided comments.",
@@ -117,8 +122,7 @@
     "Phase 7 APPEND-ONLY REDESIGN COMPLETE + DEPLOYED + VALIDATED 2026-07-22. Chaincode rewritten (hybridguard.go) and fabric_client.py refactored. Deployed as Version 2.1 / Sequence 3, package ID hybridguard_2.1:2817ea861613554d5a9ab9fea88ddb5d3d234c2e017c9fb1873f18dc7d6326ab, approved by Org1+Org2, committed on hybridguard-channel.",
     "DEPLOY GOTCHA (important for any future redeploy): first attempt used ccp path '../../chaincode/hybridguard' which was WRONG — Fabric silently reused the previously-installed package instead of repackaging the new source. Correct path from test-network dir is '../../../chaincode/hybridguard'. Confirm a NEW package ID is generated to prove new source is running (old binary reuse = no new package ID).",
     "Chaincode redesign delivered: (1) StoreCID append-only — read-only device check (existence + not-blacklisted), then PutState under composite key ('cid',[deviceID,timestamp,txID]); NEVER writes the device key (eliminates hot-key contention). (2) CIDRecord = {device_id, cid_hash, timestamp, tx_id}; tx_id from GetTxID() gives permanent blockchain reference + collision guard (same deviceID+timestamp no longer overwrite). (3) GetCIDHistory(deviceID) via GetStateByPartialCompositeKey('cid',[deviceID]) — ascending (timestamp, txID) order. (4) ALL time.Now() replaced with GetTxTimestamp() (via txTimeRFC3339 helper) across RegisterDevice/BlacklistDevice/UpdateTrustScore/CheckGasLimit/LogModelUpdate — deterministic across peers. (5) LatestCIDHash kept for JSON back-compat but NOT updated (documented: pre-redesign devices frozen snapshot, post-redesign devices stay ''). (6) All original events + signatures preserved. (7) Error handling tightened (no ignored errors).",
-    "fabric_client.py redesign: _invoke split into _build_invoke_cmd + _run_invoke (retry loop, returns CompletedProcess) + _invoke (bool wrapper). check_gas_limit() now routes through _run_invoke so it gets the SAME transient-conflict retry (ProposalResponsePayloads/MVCC_READ_CONFLICT/PHANTOM_READ_CONFLICT, 3 attempts/1.5s) as StoreCID/UpdateTrustScore/BlacklistDevice/LogModelUpdate — resolves the earlier check_gas_limit retry-gap open item. Added get_cid_history(device_id) -> list[dict]. All existing public signatures unchanged; retry behavior for existing callers unchanged.",
-    "Phase 7 VALIDATION 2026-07-22: 30s NORMAL_OPERATION sim -> Simulator->Gateway->IPFS->Fabric->FL all green, HTTP 200 every ingest, no errors. fc.get_cid_history('sim-device-01') returned 6 immutable records each with device_id/cid_hash/timestamp/tx_id (tx_id presence PROVES new chaincode active). Append-only + composite-key + ordering + auditability confirmed. No ProposalResponsePayloads/MVCC/PHANTOM conflicts (retry path not triggered under NORMAL load — still sound-but-unexercised in practice; a MIRAI_FLOOD burst remains the way to actually exercise it). FL: device processed, trust updated, no excluded/pending — blockchain redesign did NOT disrupt FL pipeline.",
-    "OPEN ITEM RESOLVED: check_gas_limit retry-gap (now routes through _run_invoke). OPEN ITEM RESOLVED: append-only CID redesign. REMAINING for Phase 7 proper = the 8 BENCHMARKS (B1 done in Phase 2: F1=0.8636/AUC=0.9808; B2 latency p95; B3 TPS via Caliper; B4 FL convergence; B5 IPFS storage efficiency; B6 XAI latency; B7 privacy capture; B8 gas-limit DDoS mitigation). Project transitioning implementation->evaluation: attack scenarios (Mirai Flood, Sybil), perf benchmarking, latency/throughput, result collection, paper writing. No further architectural changes planned before benchmarking unless testing uncovers issues."
+    "2026-07-22 INCIDENT + RECOVERY: Gateway logged 'device sim-device-XX not found' on every /ingest (GetDevice + StoreCID both status:500). Root cause: the Fabric network was torn down and redeployed fresh (FRAMEWORK_TESTING_GUIDE steps 3-8 = network.sh up -> createChannel -> deployCC), which WIPED the world state (all 4 devices gone) AND reset the chaincode lifecycle to Version 1.0 / Sequence 1, package hybridguard_1.0:a0f67b9c... The prior state record (v2.1/seq3/2817ea...) was thus stale and has been corrected above. IMPORTANT: the append-only redesign SOURCE on disk (chaincode/hybridguard/hybridguard.go) was repackaged into this v1.0 deployment, so the RUNNING binary IS the correct append-only logic — confirmed by GetCIDHistory(sim-device-01) returning [] (not 'unknown function'). Only the version LABEL reverted, not the behavior. RECOVERY: re-registered all 4 devices (RegisterDevice, cert_hash from keys/key_registry.json, org HybridGuardOrg) — all status:200, GetDevice now returns status:trusted. Devices are NOT auto-registered by any service; registration is a manual peer invoke (guide step 9), so any fresh ledger needs re-registration. FUTURE-PROOFING RECOMMENDATION (not yet done): add a scripts/register_devices.py that reads key_registry.json and registers all devices via fabric_client.register_device(), so recovery is one command instead of manual invokes."
+  
   ]
 }

@@ -79,3 +79,454 @@
 2026-07-22 00:44:08,956 [GATEWAY] INFO IPFS upload OK: CID=QmSHSwa476nkAfXT6n4s...
 2026-07-22 00:44:09,130 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmSHSwa476nkAfXT6n4sPbPt4Vs1XHiuXTE9WkGxCHBV8e'])
 2026-07-22 00:44:09,138 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 00:44:09] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 01:46:54,028 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 01:46:54] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:31:52,964 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:31:52] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:33:46,707 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:33:46] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:35:19,994 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:35:19] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:36:53,097 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:36:53] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:38:26,464 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:38:26] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:39:59,717 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:39:59] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:41:32,706 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:41:32] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:43:06,402 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:43:06] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:44:33,274 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:44:33] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:44:39,359 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:44:39] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:46:12,506 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:46:12] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:47:46,385 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:47:46] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:49:49,759 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:49:49] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:51:42,308 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:51:42] "GET /health HTTP/1.1" 200 -
+2026-07-22 02:53:15,399 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 02:53:15] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:12:39,671 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:12:39] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:14:29,489 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:14:29] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:16:00,925 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:16:00] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:22:20,641 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:22:20] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:24:10,410 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:24:10] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:25:42,231 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:25:42] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:27:13,899 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:27:13] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:28:45,331 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:28:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:30:16,808 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:30:16] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:31:48,197 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:31:48] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:33:19,853 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:33:19] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:34:51,240 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:34:51] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:36:22,693 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:36:22] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:37:54,679 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:37:54] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:39:26,162 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:39:26] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:40:57,594 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:40:57] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:42:29,279 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:42:29] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:44:08,489 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:44:08] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:45:58,248 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:45:58] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:50:39,286 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:50:39] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:53:23,254 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:53:23] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:53:23,842 [GATEWAY] INFO Gateway starting on port 8080...
+2026-07-22 03:53:23,868 [GATEWAY] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.101.23:8080
+2026-07-22 03:53:23,868 [GATEWAY] INFO [33mPress CTRL+C to quit[0m
+2026-07-22 03:53:33,905 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:53:33] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:53:35,699 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:53:35] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:54:02,578 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:54:02] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:54:17,059 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:54:17] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:54:31,251 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:54:31] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:54:45,175 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:54:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:54:59,027 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:54:59] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:55:02,604 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:02,680 [GATEWAY] INFO IPFS upload OK: CID=QmY6p9w37tWRCVDqfMy2...
+2026-07-22 03:55:02,955 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:03,029 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:03] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:08,191 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:08,232 [GATEWAY] INFO IPFS upload OK: CID=QmNn9ArjD1Zw8513S7KW...
+2026-07-22 03:55:08,392 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:08,405 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:08] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:13,455 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:13] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:55:13,667 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:13,700 [GATEWAY] INFO IPFS upload OK: CID=QmURNvQ38qg8mWWbMG71...
+2026-07-22 03:55:13,877 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:13,884 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:13] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:19,116 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:19,151 [GATEWAY] INFO IPFS upload OK: CID=QmUp3FrwVUcFYEZSSasw...
+2026-07-22 03:55:19,312 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:19,322 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:19] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:24,497 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:24,538 [GATEWAY] INFO IPFS upload OK: CID=QmQo7R1SQ3RHf2Yg1j2p...
+2026-07-22 03:55:24,680 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:24,689 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:24] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:27,740 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:27] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:55:29,829 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:29,859 [GATEWAY] INFO IPFS upload OK: CID=QmRed9SynepRJnq7C2CQ...
+2026-07-22 03:55:29,996 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:30,004 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:30] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:35,208 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:35,243 [GATEWAY] INFO IPFS upload OK: CID=QmbyqY7YfqhHU73mxM56...
+2026-07-22 03:55:35,396 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:35,405 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:35] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:40,552 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:40,585 [GATEWAY] INFO IPFS upload OK: CID=QmTktkpiyU9DmHXBHtmR...
+2026-07-22 03:55:40,775 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:40,783 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:40] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:41,700 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:41] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:55:45,951 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:45,987 [GATEWAY] INFO IPFS upload OK: CID=QmUg3Z43onLpipQMtGbJ...
+2026-07-22 03:55:46,142 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:46,150 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:46] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:51,309 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:51,349 [GATEWAY] INFO IPFS upload OK: CID=QmZzvbGZu3Xo6esn9PBx...
+2026-07-22 03:55:51,480 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:51,488 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:51] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:55:55,856 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:55] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:55:56,640 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:55:56,686 [GATEWAY] INFO IPFS upload OK: CID=QmZZ4xmLMxXrycaYhA4x...
+2026-07-22 03:55:56,850 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:55:56,857 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:55:56] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:56:02,000 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybridg
+2026-07-22 03:56:02,037 [GATEWAY] INFO IPFS upload OK: CID=QmSxBtmh7RAzwzSA2jqL...
+2026-07-22 03:56:02,177 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"make sure the chaincode hybridguard has been successfully defined on channel hybridguard-channel and try again: chaincode hybrid
+2026-07-22 03:56:02,184 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:56:02] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 03:56:09,963 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:56:09] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:56:24,008 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:56:24] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:56:38,047 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:56:38] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:56:52,246 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:56:52] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:57:06,578 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:57:06] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:57:21,148 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:57:21] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:57:35,742 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:57:35] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:57:49,735 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:57:49] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:58:03,632 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:58:03] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:58:17,531 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:58:17] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:58:31,467 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:58:31] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:58:45,354 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:58:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:58:59,406 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:58:59] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:59:13,408 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:59:13] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:59:27,514 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:59:27] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:59:41,467 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:59:41] "GET /health HTTP/1.1" 200 -
+2026-07-22 03:59:55,541 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 03:59:55] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:00:09,358 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:00:09] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:00:23,949 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:00:23] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:00:38,198 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:00:38] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:00:52,330 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:00:52] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:01:06,476 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:01:06] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:01:20,439 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:01:20] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:01:34,287 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:01:34] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:01:48,234 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:01:48] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:02:02,471 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:02:02] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:02:16,992 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:02:16] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:02:31,061 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:02:31] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:02:45,161 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:02:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:02:59,056 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:02:59] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:03:13,083 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:03:13] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:03:27,029 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:03:27] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:03:41,268 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:03:41] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:03:55,402 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:03:55] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:04:09,854 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:04:09] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:04:24,135 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:04:24] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:04:38,460 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:04:38] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:04:52,465 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:04:52] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:05:06,638 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:05:06] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:05:20,836 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:05:20] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:05:35,229 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:05:35] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:05:49,402 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:05:49] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:06:03,627 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:06:03] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:06:17,880 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:06:17] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:06:32,199 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:06:32] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:06:46,475 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:06:46] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:07:00,251 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:07:00] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:07:13,952 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:07:13] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:07:27,684 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:07:27] "GET /health HTTP/1.1" 200 -
+2026-07-22 04:07:41,458 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 04:07:41] "GET /health HTTP/1.1" 200 -
+2026-07-22 15:43:21,064 [GATEWAY] INFO Gateway starting on port 8080...
+2026-07-22 15:43:21,122 [GATEWAY] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.101.23:8080
+2026-07-22 15:43:21,122 [GATEWAY] INFO [33mPress CTRL+C to quit[0m
+2026-07-22 15:53:46,673 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 15:53:46] "GET /health HTTP/1.1" 200 -
+2026-07-22 15:53:46,876 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 15:53:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-22 16:04:24,899 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:04:24] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:07:40,125 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:07:40] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:08:08,406 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:08:08] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:08:22,728 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:08:22] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:08:36,616 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:08:36] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:08:50,370 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:08:50] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:09:04,036 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:09:04] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:09:17,841 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:09:17] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:09:31,601 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:09:31] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:09:45,645 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:09:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:09:51,983 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:09:52,079 [GATEWAY] INFO IPFS upload OK: CID=QmPyKfR2Ucm2oJ5M9QZ2...
+2026-07-22 16:09:53,185 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:09:53,186 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmPyKfR2Ucm2oJ5M9QZ2RH8vzvYSMSJugfN7i3EnW9HpMi uploaded to IPFS but NOT written to ledger
+2026-07-22 16:09:53,256 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:09:53] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:09:58,425 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:09:58,464 [GATEWAY] INFO IPFS upload OK: CID=QmTD6pKM9rJEGzjPYnxT...
+2026-07-22 16:09:58,614 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:09:58,615 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmTD6pKM9rJEGzjPYnxTFz1N8wvzdcrHNDph6kGAQy7vZ6 uploaded to IPFS but NOT written to ledger
+2026-07-22 16:09:58,629 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:09:58] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:09:59,438 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:09:59] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:10:03,774 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:03,815 [GATEWAY] INFO IPFS upload OK: CID=Qmc5x5MZvBRSWsVXkwab...
+2026-07-22 16:10:03,983 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:03,983 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID Qmc5x5MZvBRSWsVXkwabi3zbaVbNu7WAquW2uz1ypNNFAe uploaded to IPFS but NOT written to ledger
+2026-07-22 16:10:03,994 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:10:03] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:10:09,155 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:09,188 [GATEWAY] INFO IPFS upload OK: CID=QmSQiYpehqzYx4UoJ8ym...
+2026-07-22 16:10:09,321 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:09,321 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmSQiYpehqzYx4UoJ8ymcg4nqEnFM4H4Jtes3nbitHkLKD uploaded to IPFS but NOT written to ledger
+2026-07-22 16:10:09,329 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:10:09] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:10:14,465 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:14,497 [GATEWAY] INFO IPFS upload OK: CID=QmYDnG2BMrzu9St1WaVi...
+2026-07-22 16:10:14,654 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:14,654 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmYDnG2BMrzu9St1WaViG3kamV8q4K8p3QTjLnb5h2VbKy uploaded to IPFS but NOT written to ledger
+2026-07-22 16:10:14,662 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:10:14] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:10:19,804 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:19,841 [GATEWAY] INFO IPFS upload OK: CID=QmWdjs2uKY5KJm4pbVmD...
+2026-07-22 16:10:19,992 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:10:19,993 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmWdjs2uKY5KJm4pbVmD53wAaJ4PTE2eTzrZiPvo4EYVCV uploaded to IPFS but NOT written to ledger
+2026-07-22 16:10:20,023 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:10:20] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:10:26,496 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:10:26] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:10:52,717 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:10:52] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:11:18,980 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:11:18] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:11:45,049 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:11:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:12:11,284 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:12:11] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:12:37,831 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:12:37] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:13:04,417 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:04] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:13:18,265 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:18,344 [GATEWAY] INFO IPFS upload OK: CID=QmW85g4brHNCHAA2XDJM...
+2026-07-22 16:13:18,541 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:18,541 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmW85g4brHNCHAA2XDJM9ebRQnvokRG2uBCqQP9BGkaRuL uploaded to IPFS but NOT written to ledger
+2026-07-22 16:13:18,552 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:18] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:13:23,715 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:23,754 [GATEWAY] INFO IPFS upload OK: CID=QmVauHdywhU7ZAcv5GCY...
+2026-07-22 16:13:23,914 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:23,914 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmVauHdywhU7ZAcv5GCYGBu3RCQpoki8JK2djAwf8UXrE5 uploaded to IPFS but NOT written to ledger
+2026-07-22 16:13:23,921 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:23] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:13:29,061 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:29,099 [GATEWAY] INFO IPFS upload OK: CID=QmYdPfhS5apVkVcGmhZE...
+2026-07-22 16:13:29,243 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:29,243 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmYdPfhS5apVkVcGmhZEXKSfFos47VLeiex25JaQugoqpf uploaded to IPFS but NOT written to ledger
+2026-07-22 16:13:29,250 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:29] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:13:30,794 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:30] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:13:34,412 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:34,443 [GATEWAY] INFO IPFS upload OK: CID=QmceBNAu35qcvbPh11vf...
+2026-07-22 16:13:34,639 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:34,640 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmceBNAu35qcvbPh11vfSx4MHPAfGcAGdwwW9SrE4BLLTN uploaded to IPFS but NOT written to ledger
+2026-07-22 16:13:34,647 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:34] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:13:39,817 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:39,845 [GATEWAY] INFO IPFS upload OK: CID=QmPA4Fmpm2aiEWbfk515...
+2026-07-22 16:13:39,979 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:39,979 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmPA4Fmpm2aiEWbfk515yvPv6MmuxdFpCCo1rRaWeaGphV uploaded to IPFS but NOT written to ledger
+2026-07-22 16:13:39,984 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:39] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:13:45,124 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:45,157 [GATEWAY] INFO IPFS upload OK: CID=QmTrAjP4cZCtm7gpeup4...
+2026-07-22 16:13:45,302 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:13:45,303 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmTrAjP4cZCtm7gpeup45TJSYRUn8GAdHaXie99UBNLR8Z uploaded to IPFS but NOT written to ledger
+2026-07-22 16:13:45,311 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:45] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:13:57,443 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:13:57] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:14:23,428 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:14:23] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:14:49,437 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:14:49] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:15:15,357 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:15:15] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:15:41,331 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:15:41] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:16:07,398 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:16:07] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:16:33,631 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:16:33] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:17:00,212 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:17:00] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:17:26,912 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:17:26] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:17:53,376 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:17:53] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:18:19,467 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:18:19] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:18:45,541 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:18:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:19:11,946 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:19:11] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:19:38,097 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:19:38] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:20:04,092 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:20:04] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:20:30,223 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:20:30] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:20:56,599 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:20:56] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:21:22,660 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:21:22] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:21:48,796 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:21:48] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:22:15,325 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:22:15] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:22:41,545 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:22:41] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:23:07,641 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:23:07] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:23:33,802 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:23:33] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:24:00,496 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:24:00] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:24:26,711 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:24:26] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:24:52,733 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:24:52] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:25:19,348 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:25:19] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:25:46,095 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:25:46] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:26:12,702 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:26:12] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:26:39,536 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:26:39] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:27:05,732 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:27:05] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:27:32,352 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:27:32] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:27:58,729 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:27:58] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:28:25,022 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:28:25] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:28:51,077 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:28:51] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:29:17,515 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:29:17] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:29:43,625 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:29:43] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:30:09,852 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:30:09] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:30:36,481 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:30:36] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:31:02,856 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:31:02] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:31:29,888 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:31:29] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:31:55,969 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:31:55] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:32:22,027 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:32:22] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:32:48,271 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:32:48] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:33:14,423 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:33:14] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:33:40,589 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:33:40] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:34:08,735 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:08] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:34:10,699 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:10,767 [GATEWAY] INFO IPFS upload OK: CID=QmdTGKj7VUv8YAg6iUjk...
+2026-07-22 16:34:10,961 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:10,961 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmdTGKj7VUv8YAg6iUjkiMSRjDoaf4P2ExNYJo6Bi8ShoN uploaded to IPFS but NOT written to ledger
+2026-07-22 16:34:10,973 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:10] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:34:16,134 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:16,174 [GATEWAY] INFO IPFS upload OK: CID=QmV8tSotxNCmqRWP5if7...
+2026-07-22 16:34:16,319 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:16,319 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmV8tSotxNCmqRWP5if7LsKUKXtGjanUbsxWoRRooR8f1P uploaded to IPFS but NOT written to ledger
+2026-07-22 16:34:16,326 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:16] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:34:21,500 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:21,529 [GATEWAY] INFO IPFS upload OK: CID=QmPFJfmYz16aBUKXA2r6...
+2026-07-22 16:34:21,689 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:21,689 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmPFJfmYz16aBUKXA2r6GQ5QPSGg4RKAYcAbQ9BmcuJg6P uploaded to IPFS but NOT written to ledger
+2026-07-22 16:34:21,697 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:21] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:34:26,853 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:26,884 [GATEWAY] INFO IPFS upload OK: CID=QmUr4dUAiWW159a6xASK...
+2026-07-22 16:34:27,010 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:27,010 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmUr4dUAiWW159a6xASKSXWu99eL6Z5mud4MzMauwbFQSq uploaded to IPFS but NOT written to ledger
+2026-07-22 16:34:27,027 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:27] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:34:32,179 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:32,219 [GATEWAY] INFO IPFS upload OK: CID=QmYmZRKG4XNhVV7BJRQV...
+2026-07-22 16:34:32,363 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:32,363 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmYmZRKG4XNhVV7BJRQVbNm8ToQSPWVt2W6tyrFVnboK1g uploaded to IPFS but NOT written to ledger
+2026-07-22 16:34:32,369 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:32] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:34:34,605 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:34] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:34:37,524 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:37,566 [GATEWAY] INFO IPFS upload OK: CID=QmPPwzrVLW4HirwHf32L...
+2026-07-22 16:34:37,703 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-02 not found" 
+
+2026-07-22 16:34:37,704 [GATEWAY] WARNING store_cid did NOT commit for sim-device-02: CID QmPPwzrVLW4HirwHf32LkKfvnUYQXLgqdcaodKNGdvubEs uploaded to IPFS but NOT written to ledger
+2026-07-22 16:34:37,732 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:34:37] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:35:00,771 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:35:00] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:35:26,787 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:35:26] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:35:53,260 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:35:53] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:36:19,570 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:36:19] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:36:46,078 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:36:46] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:37:12,846 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:37:12] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:37:39,012 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:37:39] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:38:05,018 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:38:05] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:38:31,450 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:38:31] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:38:57,808 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:38:57] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:39:23,682 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:39:23] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:39:49,684 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:39:49] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:40:15,622 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:40:15] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:40:41,663 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:40:41] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:41:08,292 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:41:08] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:41:34,230 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:41:34] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:42:00,398 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:42:00] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:42:26,480 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:42:26] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:42:52,810 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:42:52] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:43:19,182 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:43:19] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:43:45,514 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:43:45] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:44:11,828 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:44:11] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:44:38,090 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:44:38] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:45:04,511 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:45:04] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:45:30,894 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:45:30] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:45:57,374 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:45:57] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:46:23,533 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:46:23] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:46:49,677 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:46:49] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:47:16,313 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:47:16] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:47:42,730 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:47:42] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:48:08,909 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:48:08] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:48:35,386 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:48:35] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:49:01,516 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:49:01] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:49:27,558 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:49:27] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:49:54,065 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:49:54] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:50:20,175 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:50:20] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:50:46,585 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:50:46] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:51:12,993 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:51:12] "GET /health HTTP/1.1" 200 -
+2026-07-22 16:55:36,006 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:36,131 [GATEWAY] INFO IPFS upload OK: CID=Qmap4smq5var8VQFkKEP...
+2026-07-22 16:55:36,354 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:36,355 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID Qmap4smq5var8VQFkKEPYd2HvEDz3Nu7UCQifH5dtZEriy uploaded to IPFS but NOT written to ledger
+2026-07-22 16:55:36,391 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:55:36] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:55:41,561 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:41,604 [GATEWAY] INFO IPFS upload OK: CID=QmWgXMsV1QEuFXkPXtnA...
+2026-07-22 16:55:41,761 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:41,762 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmWgXMsV1QEuFXkPXtnAH4YXvsiWxjU4HueuUVXfNYhmXq uploaded to IPFS but NOT written to ledger
+2026-07-22 16:55:41,770 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:55:41] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:55:46,921 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:46,956 [GATEWAY] INFO IPFS upload OK: CID=QmXxSEve5XZ6sRTQpbBu...
+2026-07-22 16:55:47,099 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:47,100 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmXxSEve5XZ6sRTQpbBuzPNWL7EKG7hvf9iZRHHCDJ5SCD uploaded to IPFS but NOT written to ledger
+2026-07-22 16:55:47,106 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:55:47] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:55:52,264 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:52,297 [GATEWAY] INFO IPFS upload OK: CID=Qmcu1UphjBiNAGbyzxz8...
+2026-07-22 16:55:52,506 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:52,507 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID Qmcu1UphjBiNAGbyzxz8FYALry9Y5CkKZu3RT7dhRSh24v uploaded to IPFS but NOT written to ledger
+2026-07-22 16:55:52,520 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:55:52] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:55:57,688 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:57,725 [GATEWAY] INFO IPFS upload OK: CID=QmQkcsGCWJqSwraeBZ5K...
+2026-07-22 16:55:57,861 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:55:57,862 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmQkcsGCWJqSwraeBZ5KvstXPcjJbsVLjJpVQ57WkK7ucD uploaded to IPFS but NOT written to ledger
+2026-07-22 16:55:57,867 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:55:57] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 16:56:03,022 [GATEWAY] ERROR Fabric query failed [GetDevice]: Error: endorsement failure during query. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:56:03,056 [GATEWAY] INFO IPFS upload OK: CID=QmWY1e7FU7VAMXruGzvf...
+2026-07-22 16:56:03,209 [GATEWAY] ERROR Fabric invoke failed [StoreCID]: Error: endorsement failure during invoke. response: status:500 message:"device sim-device-01 not found" 
+
+2026-07-22 16:56:03,209 [GATEWAY] WARNING store_cid did NOT commit for sim-device-01: CID QmWY1e7FU7VAMXruGzvfrYL2HXHNYbTpo1nP8fQEvXdGKk uploaded to IPFS but NOT written to ledger
+2026-07-22 16:56:03,232 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 16:56:03] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 17:32:51,893 [GATEWAY] INFO IPFS upload OK: CID=QmaWTqak4YwrfpYrVssZ...
+2026-07-22 17:32:52,122 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmaWTqak4YwrfpYrVssZeqHJAgwe8hqesZLo6jMSPVbEoB'])
+2026-07-22 17:32:52,150 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 17:32:52] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 17:32:57,370 [GATEWAY] INFO IPFS upload OK: CID=QmYuAqfCboEgPrS9dTDa...
+2026-07-22 17:32:57,559 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmYuAqfCboEgPrS9dTDavejFN51xCFzkhQbeiYaNZWzgv1'])
+2026-07-22 17:32:57,572 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 17:32:57] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 17:33:02,780 [GATEWAY] INFO IPFS upload OK: CID=QmPwGtwZLdCqxK1DedYN...
+2026-07-22 17:33:02,930 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmPwGtwZLdCqxK1DedYNCjqw2KG3jGzRa4eYCtn8qkaewH'])
+2026-07-22 17:33:02,961 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 17:33:02] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 17:33:08,148 [GATEWAY] INFO IPFS upload OK: CID=QmSGMYyCKHjn8FAo9kL5...
+2026-07-22 17:33:08,282 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmSGMYyCKHjn8FAo9kL5aqkyKpPYuDqY2YyF61mEKzE1jJ'])
+2026-07-22 17:33:08,308 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 17:33:08] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 17:33:13,500 [GATEWAY] INFO IPFS upload OK: CID=QmUvZrVMJ3VUDeziMgrs...
+2026-07-22 17:33:13,638 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmUvZrVMJ3VUDeziMgrs72DCJZnH5XdFQKwMp37JZRzyTu'])
+2026-07-22 17:33:13,659 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 17:33:13] "POST /ingest HTTP/1.1" 200 -
+2026-07-22 17:33:18,848 [GATEWAY] INFO IPFS upload OK: CID=QmWXnMdkD3dQk6G8By2d...
+2026-07-22 17:33:18,998 [GATEWAY] INFO Fabric invoke OK: StoreCID(['sim-device-01', 'QmWXnMdkD3dQk6G8By2dGShpi4YT5vUVMAzdow7pKbd8PJ'])
+2026-07-22 17:33:19,019 [GATEWAY] INFO 127.0.0.1 - - [22/Jul/2026 17:33:19] "POST /ingest HTTP/1.1" 200 -
