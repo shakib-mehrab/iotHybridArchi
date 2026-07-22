@@ -14,7 +14,14 @@ Design:
     calls never freeze the UI:
         fast  (DASHBOARD_POLL_SECONDS) -> service health, FL status, pipeline, logs
         slow  (FABRIC_POLL_SECONDS)    -> device records + CID history (Fabric)
-  - Panels are @ui.refreshable; timers refill a shared `state` then refresh.
+
+  INTERACTIVE vs DISPLAY-ONLY (important):
+    Widgets that hold user state — the Live Logs tab selection, the simulation
+    form inputs, the CID device dropdown — are built ONCE and only have their
+    *data* updated in place on each poll. They are never rebuilt, so your tab
+    selection / typed duration / chosen device survive the 3s refresh.
+    Only pure display panels (status, pipeline, devices, FL) are @ui.refreshable
+    and rebuilt wholesale, because they hold no user state.
 
 Run:  python dashboard/app.py   (or: python -m dashboard.app)
 """
@@ -49,10 +56,13 @@ class State:
 
 state = State()
 
+# Persistent widget references (built once, updated in place — NOT rebuilt).
+_log_labels = {}   # log name -> ui.label holding that log's text
+
 GREEN, RED, GREY, AMBER = "#16a34a", "#dc2626", "#9ca3af", "#d97706"
 
 
-# ── panels ───────────────────────────────────────────────────────────────────
+# ── DISPLAY-ONLY panels (safe to rebuild; no user state inside) ──────────────
 @ui.refreshable
 def panel_status():
     up = sum(1 for s in state.health if s.up)
@@ -153,11 +163,8 @@ def panel_fl():
 
 
 @ui.refreshable
-def panel_cids():
-    with ui.row().classes("items-center gap-2 w-full"):
-        ui.label("CID History (append-only ledger)").classes("text-lg font-bold")
-        ui.select(settings.DEVICE_IDS, value=state.cid_device,
-                  on_change=lambda e: _select_cid_device(e.value)).props("dense outlined").classes("w-48")
+def cid_table():
+    """Only the CID rows refresh; the device dropdown above is persistent."""
     if not state.cids:
         ui.label("No CIDs for this device yet.").classes("text-sm text-gray-500")
         return
@@ -173,27 +180,28 @@ def panel_cids():
 
 
 @ui.refreshable
-def panel_logs():
-    ui.label("Live Logs").classes("text-lg font-bold")
-    with ui.tabs().classes("w-full") as tabs:
-        for name in state.logs:
-            ui.tab(name)
-    default = next(iter(state.logs), None)
-    if default is None:
-        ui.label("No logs found.").classes("text-sm text-gray-500")
-        return
-    with ui.tab_panels(tabs, value=default).classes("w-full"):
-        for name, lines in state.logs.items():
-            with ui.tab_panel(name):
-                with ui.scroll_area().classes("h-56 w-full bg-gray-900 rounded"):
-                    ui.label("\n".join(lines) if lines else "(empty)").classes(
-                        "text-xs font-mono whitespace-pre text-green-300")
+def sim_running_list():
+    """Only the running-sims list refreshes; the form above is persistent."""
+    running = runner.running()
+    with ui.row().classes("items-center gap-2 w-full"):
+        ui.label(f"Running: {len(running)}").classes("text-sm font-medium")
+        if running:
+            ui.button("Stop all", icon="stop", color="red",
+                      on_click=lambda: (runner.stop_all(), sim_running_list.refresh())).props("dense outline")
+    for sp in running:
+        with ui.row().classes("items-center gap-2 w-full no-wrap"):
+            ui.icon("play_circle", color=GREEN).classes("text-sm")
+            ui.label(f"{sp.device} · {sp.scenario} · {sp.elapsed}s/{sp.duration}s").classes("text-xs grow")
+            ui.button(icon="stop",
+                      on_click=lambda k=sp.key: (runner.stop(k), sim_running_list.refresh())).props(
+                "flat dense round size=sm")
 
 
-@ui.refreshable
-def panel_sim():
+# ── PERSISTENT interactive panels (built once; data updated in place) ────────
+def build_sim_panel():
+    """Static simulation form. Built once — the poll loop refreshes ONLY
+    sim_running_list, so your device/scenario/duration selections never reset."""
     ui.label("Simulation Control").classes("text-lg font-bold")
-    # ── single run ──
     with ui.row().classes("items-end gap-2 w-full no-wrap"):
         dev = ui.select(settings.DEVICE_IDS, value=settings.DEVICE_IDS[0],
                         label="Device").props("dense outlined").classes("w-40")
@@ -206,10 +214,10 @@ def panel_sim():
             ok = runner.run_single(dev.value, scn.value, int(dur.value or 30))
             (ui.notify(f"Launched {dev.value} / {scn.value}", type="positive") if ok
              else ui.notify("Already running that device/scenario", type="warning"))
-            panel_sim.refresh()
+            sim_running_list.refresh()
 
         ui.button("Run", icon="play_arrow", on_click=_run_single).props("color=primary")
-    # ── presets ──
+
     with ui.row().classes("items-center gap-2 w-full mt-1"):
         ui.label("Presets:").classes("text-sm text-gray-500")
         for name in settings.PRESETS:
@@ -218,32 +226,58 @@ def panel_sim():
                     c = runner.run_preset(n)
                     ui.notify(f"{n}: launched {c} device(s)",
                               type="positive" if c else "warning")
-                    panel_sim.refresh()
+                    sim_running_list.refresh()
                 return _run
             ui.button(name, on_click=_mk(name)).props("outline dense").classes("text-xs")
-    # ── running ──
-    running = runner.running()
-    with ui.row().classes("items-center gap-2 w-full mt-2"):
-        ui.label(f"Running: {len(running)}").classes("text-sm font-medium")
-        if running:
-            ui.button("Stop all", icon="stop", color="red",
-                      on_click=lambda: (runner.stop_all(), panel_sim.refresh())).props("dense outline")
-    for sp in running:
-        with ui.row().classes("items-center gap-2 w-full no-wrap"):
-            ui.icon("play_circle", color=GREEN).classes("text-sm")
-            ui.label(f"{sp.device} · {sp.scenario} · {sp.elapsed}s/{sp.duration}s").classes("text-xs grow")
-            ui.button(icon="stop", on_click=lambda k=sp.key: (runner.stop(k), panel_sim.refresh())).props(
-                "flat dense round size=sm")
+
+    ui.separator().classes("my-1")
+    sim_running_list()  # the only part that auto-refreshes
+
+
+def build_cid_panel():
+    """Static header + device dropdown; only cid_table() refreshes."""
+    with ui.row().classes("items-center gap-2 w-full"):
+        ui.label("CID History (append-only ledger)").classes("text-lg font-bold")
+        ui.select(settings.DEVICE_IDS, value=state.cid_device,
+                  on_change=lambda e: _select_cid_device(e.value)).props(
+            "dense outlined").classes("w-48")
+    cid_table()
+
+
+def build_logs_panel():
+    """Persistent tabs + one label per log. The tab selection is preserved
+    across refreshes because we NEVER rebuild the tabs — we only push new text
+    into the existing labels (update_logs)."""
+    ui.label("Live Logs").classes("text-lg font-bold")
+    names = list(settings.LOG_SOURCES.keys())
+    if not names:
+        ui.label("No logs configured.").classes("text-sm text-gray-500")
+        return
+    with ui.tabs().classes("w-full") as tabs:
+        for name in names:
+            ui.tab(name)
+    with ui.tab_panels(tabs, value=names[0]).classes("w-full"):
+        for name in names:
+            with ui.tab_panel(name):
+                with ui.scroll_area().classes("h-56 w-full bg-gray-900 rounded"):
+                    _log_labels[name] = ui.label("(loading…)").classes(
+                        "text-xs font-mono whitespace-pre text-green-300")
+
+
+def update_logs():
+    """Push fresh text into the persistent log labels — no widget rebuild."""
+    for name, label in _log_labels.items():
+        lines = state.logs.get(name, [])
+        label.set_text("\n".join(lines) if lines else "(empty)")
 
 
 # ── interactions ─────────────────────────────────────────────────────────────
 def _select_cid_device(device_id: str):
     state.cid_device = device_id
-    # fetch immediately (off-thread) so the panel updates without waiting a cycle
 
     async def _fetch():
         state.cids = await run.io_bound(services.get_cid_history, device_id)
-        panel_cids.refresh()
+        cid_table.refresh()
 
     ui.timer(0.01, _fetch, once=True)
 
@@ -261,8 +295,8 @@ async def poll_fast():
     panel_status.refresh()
     panel_pipeline.refresh()
     panel_fl.refresh()
-    panel_logs.refresh()
-    panel_sim.refresh()
+    update_logs()          # in-place; keeps your selected log tab
+    sim_running_list.refresh()  # in-place; leaves the sim form untouched
 
 
 async def poll_slow():
@@ -272,7 +306,7 @@ async def poll_slow():
     except Exception as e:
         state.last_error = str(e)
     panel_devices.refresh()
-    panel_cids.refresh()
+    cid_table.refresh()    # in-place; leaves the CID device dropdown untouched
 
 
 # ── layout ───────────────────────────────────────────────────────────────────
@@ -291,16 +325,16 @@ def index():
             with ui.card().classes("grow"):
                 panel_pipeline()
         with ui.card().classes("w-full"):
-            panel_sim()
+            build_sim_panel()
         with ui.card().classes("w-full"):
             panel_devices()
         with ui.row().classes("w-full gap-4 no-wrap items-stretch"):
             with ui.card().classes("grow"):
                 panel_fl()
             with ui.card().classes("grow"):
-                panel_cids()
+                build_cid_panel()
         with ui.card().classes("w-full"):
-            panel_logs()
+            build_logs_panel()
 
     # initial fill + recurring timers (per-client)
     ui.timer(0.1, poll_fast, once=True)
