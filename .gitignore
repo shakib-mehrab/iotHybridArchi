@@ -9,3 +9,6 @@ edge/__pycache__
 dashboard/__pycache__
 config/__pycache__
 prompt.txt
+logs
+keys
+
