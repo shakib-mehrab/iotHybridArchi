@@ -1,9 +1,9 @@
 {
   "project": "HybridGuard",
   "version": "1.0",
-  "last_updated": "2026-07-22T12:00:00",
+  "last_updated": "2026-07-22T18:00:00",
   "last_completed_phase": 6,
-  "last_completed_step": "7.0-redesign-deployed-benchmarks-pending",
+  "last_completed_step": "7.2-dashboard-rebuilt-dashboard-only-boots-ok-pending-manual",
 
   "user_config": {
     "windows_project_root": "F:\\4 1 Research\\hybrid-architecture\\iotHybridArchi",
@@ -42,7 +42,7 @@
     "phase_5_fl_xai": "completed",
     "phase_6_simulator": "completed",
     "phase_7_benchmarks": "in_progress",
-    "phase_7_2_dashboard": "code_complete_agent_verified_pending_manual",
+    "phase_7_2_dashboard": "rebuilt_dashboard_only_boots_ok_pending_full_manual",
     "phase_8_real_devices": "not_started"
   },
 
@@ -103,7 +103,8 @@
 
   "pending_actions": [
     "Phase 7 benchmarks: run b1-b8 and record results in benchmark_results.",
-    "Phase 7.2 dashboard: complete code, verify agent integration, and run manual tests.",
+    "Phase 7.2 dashboard: full manual walkthrough — python dashboard/app.py, then launch a sim from the UI and confirm pipeline highlight + CID history growth + FL trust movement render live.",
+    "Test scripts/register_devices.py against the live network (python scripts/register_devices.py --skip-existing).",
     "Phase 8 real devices: set up real Raspberry Pis, register them, and verify end-to-end operation."
   ],
   "notes": [
@@ -122,7 +123,8 @@
     "Phase 7 APPEND-ONLY REDESIGN COMPLETE + DEPLOYED + VALIDATED 2026-07-22. Chaincode rewritten (hybridguard.go) and fabric_client.py refactored. Deployed as Version 2.1 / Sequence 3, package ID hybridguard_2.1:2817ea861613554d5a9ab9fea88ddb5d3d234c2e017c9fb1873f18dc7d6326ab, approved by Org1+Org2, committed on hybridguard-channel.",
     "DEPLOY GOTCHA (important for any future redeploy): first attempt used ccp path '../../chaincode/hybridguard' which was WRONG — Fabric silently reused the previously-installed package instead of repackaging the new source. Correct path from test-network dir is '../../../chaincode/hybridguard'. Confirm a NEW package ID is generated to prove new source is running (old binary reuse = no new package ID).",
     "Chaincode redesign delivered: (1) StoreCID append-only — read-only device check (existence + not-blacklisted), then PutState under composite key ('cid',[deviceID,timestamp,txID]); NEVER writes the device key (eliminates hot-key contention). (2) CIDRecord = {device_id, cid_hash, timestamp, tx_id}; tx_id from GetTxID() gives permanent blockchain reference + collision guard (same deviceID+timestamp no longer overwrite). (3) GetCIDHistory(deviceID) via GetStateByPartialCompositeKey('cid',[deviceID]) — ascending (timestamp, txID) order. (4) ALL time.Now() replaced with GetTxTimestamp() (via txTimeRFC3339 helper) across RegisterDevice/BlacklistDevice/UpdateTrustScore/CheckGasLimit/LogModelUpdate — deterministic across peers. (5) LatestCIDHash kept for JSON back-compat but NOT updated (documented: pre-redesign devices frozen snapshot, post-redesign devices stay ''). (6) All original events + signatures preserved. (7) Error handling tightened (no ignored errors).",
-    "2026-07-22 INCIDENT + RECOVERY: Gateway logged 'device sim-device-XX not found' on every /ingest (GetDevice + StoreCID both status:500). Root cause: the Fabric network was torn down and redeployed fresh (FRAMEWORK_TESTING_GUIDE steps 3-8 = network.sh up -> createChannel -> deployCC), which WIPED the world state (all 4 devices gone) AND reset the chaincode lifecycle to Version 1.0 / Sequence 1, package hybridguard_1.0:a0f67b9c... The prior state record (v2.1/seq3/2817ea...) was thus stale and has been corrected above. IMPORTANT: the append-only redesign SOURCE on disk (chaincode/hybridguard/hybridguard.go) was repackaged into this v1.0 deployment, so the RUNNING binary IS the correct append-only logic — confirmed by GetCIDHistory(sim-device-01) returning [] (not 'unknown function'). Only the version LABEL reverted, not the behavior. RECOVERY: re-registered all 4 devices (RegisterDevice, cert_hash from keys/key_registry.json, org HybridGuardOrg) — all status:200, GetDevice now returns status:trusted. Devices are NOT auto-registered by any service; registration is a manual peer invoke (guide step 9), so any fresh ledger needs re-registration. FUTURE-PROOFING RECOMMENDATION (not yet done): add a scripts/register_devices.py that reads key_registry.json and registers all devices via fabric_client.register_device(), so recovery is one command instead of manual invokes."
+    "2026-07-22 INCIDENT + RECOVERY: Gateway logged 'device sim-device-XX not found' on every /ingest (GetDevice + StoreCID both status:500). Root cause: the Fabric network was torn down and redeployed fresh (FRAMEWORK_TESTING_GUIDE steps 3-8 = network.sh up -> createChannel -> deployCC), which WIPED the world state (all 4 devices gone) AND reset the chaincode lifecycle to Version 1.0 / Sequence 1, package hybridguard_1.0:a0f67b9c... The prior state record (v2.1/seq3/2817ea...) was thus stale and has been corrected above. IMPORTANT: the append-only redesign SOURCE on disk (chaincode/hybridguard/hybridguard.go) was repackaged into this v1.0 deployment, so the RUNNING binary IS the correct append-only logic — confirmed by GetCIDHistory(sim-device-01) returning [] (not 'unknown function'). Only the version LABEL reverted, not the behavior. RECOVERY: re-registered all 4 devices (RegisterDevice, cert_hash from keys/key_registry.json, org HybridGuardOrg) — all status:200, GetDevice now returns status:trusted. Devices are NOT auto-registered by any service; registration is a manual peer invoke (guide step 9), so any fresh ledger needs re-registration. FUTURE-PROOFING: added scripts/register_devices.py (reads key_registry.json, registers all via fabric_client.register_device(); supports named devices + --skip-existing) so recovery is one command. NOTE: register_devices.py written but not yet tested against a live network.",
+    "2026-07-22 PHASE 7.2 DASHBOARD REBUILT (dashboard-only variant). Prior Phase 7.2 source (.py) was gone — only bytecode survived in dashboard/__pycache__ + config/__pycache__. Rebuilt from the master-prompt spec with two deliberate divergences the user chose: (1) DASHBOARD-ONLY — the start_all/stop_all/restart_all/status automation scripts were NOT built; the dashboard instead shows a red row + activation-command hint for any down service. (2) SIMULATION CONTROL ADDED — the old design was read-only; user wants to launch sims from the UI with params AND multi-device presets. Files written: config/__init__.py, config/settings.py (single source of truth: ports/URLs/paths/DEVICE_IDS/PRESETS/poll cadences, auto-detects venv python + ipfs bin), dashboard/__init__.py, dashboard/models.py (ServiceHealth/DeviceInfo/CIDEntry/FLStatus/PipelineState dataclasses), dashboard/services.py (read-only: TCP/HTTP/IPFS probes, log tails, pipeline-stage inference from gateway.log, Fabric get_device/get_cid_history — all defensive+timeout-bounded, FabricClient imported lazily so UI boots without blockchain deps), dashboard/sim_runner.py (launches edge/simulator.py subprocesses single+preset, captures combined stdout/stderr to logs/simulator.log, tracks/stops running procs), dashboard/app.py (NiceGUI :8090, 7 refreshable panels, TWO poll cadences both via run.io_bound off the UI thread — fast 3s for health/FL/pipeline/logs/sim, slow 10s for Fabric device+CID reads; show=True auto-opens browser). VERIFIED: all 5 files py_compile OK; import test OK (settings, models, services, sim_runner); pipeline+log parsing exercised against real logs; server boots and serves HTTP 200 on :8090. PENDING: full manual walkthrough (run a sim from the UI, watch pipeline highlight + CID history grow + FL trust move). Backend read-only preserved — only action is launching the simulator (same as a terminal). Docs at docs/DASHBOARD.md rewritten to match the delivered design (old draft described the non-existent automation scripts)."
   
   ]
 }
